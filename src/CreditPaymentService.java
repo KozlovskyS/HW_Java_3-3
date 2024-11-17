@@ -4,10 +4,10 @@ iR - годовая процентная ставка
 lT - срок займа в месяцах
 mP - ежемесячный платеж */
 public class CreditPaymentService {
-    public double calculate(int lA,double iR,int lT){
-        double mP;
-        double iRM = iR / 12 /100;
-        mP = lA * iRM * Math.pow((1+iRM),lT) / (Math.pow((1+iRM),lT) - 1);
-        return mP;
+    public double calculate(int loanAmount, double iterestRate, int loanTerm) {
+        double monthlyPayment;
+        double interestRateMonthly = iterestRate / 12 / 100;
+        monthlyPayment = loanAmount * interestRateMonthly * Math.pow((1 + interestRateMonthly), loanTerm) / (Math.pow((1 + interestRateMonthly), loanTerm) - 1);
+        return monthlyPayment;
     }
 }
