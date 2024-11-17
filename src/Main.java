@@ -9,13 +9,13 @@ public class Main {
         loanAmount = 1_000_000;
         interestRate = 9.99;
         loanTerm = 12;
-        monthlyPayment = (int) (service.calculate(loanAmount, interestRate, loanTerm));
+        monthlyPayment =  service.calculate(loanAmount, interestRate, loanTerm);
         System.out.println(monthlyPayment);
 
-        monthlyPayment = (int) (service.calculate(1_000_000, 9.99, 24));
+        monthlyPayment = service.calculate(1_000_000, 9.99, 24);
         System.out.println(monthlyPayment);
 
-        monthlyPayment = (int) (service.calculate(1_000_000, 9.99, 36));
+        monthlyPayment = service.calculate(1_000_000, 9.99, 36);
         System.out.println(monthlyPayment);
     }
 }

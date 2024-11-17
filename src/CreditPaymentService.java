@@ -1,13 +1,12 @@
 /* Расчет аннуитетного платежа по кредиту
-lA - сумма займа
-iR - годовая процентная ставка
-lT - срок займа в месяцах
-mP - ежемесячный платеж */
+loanAmount - сумма займа
+interestRate - годовая процентная ставка
+loanTerm - срок займа в месяцах
+monthlyPayment - ежемесячный платеж */
 public class CreditPaymentService {
-    public double calculate(int loanAmount, double iterestRate, int loanTerm) {
-        double monthlyPayment;
-        double interestRateMonthly = iterestRate / 12 / 100;
-        monthlyPayment = loanAmount * interestRateMonthly * Math.pow((1 + interestRateMonthly), loanTerm) / (Math.pow((1 + interestRateMonthly), loanTerm) - 1);
+    public int calculate(int loanAmount, double iterestRate, int loanTerm) {
+        double interestRateMonthly = iterestRate / 12 / 100; // месячная процентная ставка
+        int monthlyPayment = (int) (loanAmount * interestRateMonthly * Math.pow((1 + interestRateMonthly), loanTerm) / (Math.pow((1 + interestRateMonthly), loanTerm) - 1));
         return monthlyPayment;
     }
 }
